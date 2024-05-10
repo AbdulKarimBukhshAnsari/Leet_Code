@@ -27,7 +27,7 @@ class Solution(object):
             check = 0       
 obj = Solution()
 print(obj.gcdOfStrings("TAUXXTAUXXTAUXXTAUXXTAUXX","TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX"))
-
+#not solved
 
 
 

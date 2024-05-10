@@ -16,11 +16,13 @@ class Solution(object):
             elif i == 2:
                 lst[index_element] = "Bronze Medal"
             else:
-                lst[index_element] = str(index_element+1)
+                lst[index_element] = str(i+1)
             lst2.remove(max_element)
         return lst
+
 obj = Solution()
 print(obj.findRelativeRanks([5,4,3,2,1]))
+#not completed
             
 
         
