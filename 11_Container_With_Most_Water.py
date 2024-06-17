@@ -1,5 +1,5 @@
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, height: list[int]) -> int:
         max_area = 0
         start = 0
         end = len(height)-1
@@ -15,3 +15,5 @@ class Solution:
         return max_area
 obj = Solution()
 print(obj.maxArea([1,8,6,2,5,4,8,3,7]))
+nums = [4,3,45,56]
+print(nums[0:1])

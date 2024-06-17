@@ -12,3 +12,4 @@ class Solution(object):
                 num-=1
             result+=1
         return result
+    

@@ -5,4 +5,5 @@ class Solution(object):
         :rtype: List[int]
         """
         lst = [x for x in nums if nums.count(x)==1]
-        return lst 
+        return lst
+    

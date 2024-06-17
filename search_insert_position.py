@@ -12,5 +12,5 @@ class Solution(object):
         else:
             return nums.index(target)
 obj = Solution()
-print(obj.searchInsert([1,3,5,6],5))
+print(obj.searchInsert([1,3,5,6],2))
         

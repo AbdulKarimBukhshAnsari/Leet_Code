@@ -13,7 +13,7 @@ class Solution:
         if len(result)==1 and result.isdigit()==True:
             #if there is only one number in result then we check if there exits all number then we will convert into integer
             return int(result)
-        if result[1:].isdigit()==True: #
+        if result[1:].isdigit()==True: 
             if int(result) > ((2**31)-1):
                 return (2**31)-1
             elif int(result)<(-2**31):
@@ -21,13 +21,6 @@ class Solution:
         else:
             return 0 
         if len(result) == 0:
-
             return 0
         if result[1:].isdigit()==True:
-        
             return int(result)
-obj = Solution()
-print(obj.myAtoi(" -042"))   
-#not solved
-
-

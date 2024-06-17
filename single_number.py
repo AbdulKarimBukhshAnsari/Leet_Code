@@ -8,4 +8,3 @@ class Solution(object):
         return new_list[0]
 
 obj = Solution()
-print(obj.singleNumber([4,1,2,1,2]))

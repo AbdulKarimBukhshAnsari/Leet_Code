@@ -13,7 +13,6 @@ class Solution(object):
             if timeSeries[i+1] > timeSeries[i]+duration:
                 poison_time+=duration
             else:
-                print(False)
                 poison_time+=timeSeries[i+1] - timeSeries[i]
         return poison_time    
             
