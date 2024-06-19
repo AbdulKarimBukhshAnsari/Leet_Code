@@ -1,14 +1,18 @@
 class Solution:
     def longestCommonPrefix(self, arr1: list[int], arr2: list[int]) -> int:
-        long = 0
-        if len(arr1) > len(arr2):
-            temp = arr2
-            arr2 = arr1
-            arr1 = temp
-        for i in range(len(arr1)):
-            for j in range(len(arr2)):
-                common_prefix = ''.join(c[0] for c in zip(word1,word2) if c[0] == [1])
-word1 = "flower"
-word2 = "flow"
-common_prefix = len(''.join(c[0] for c in zip(word1, word2) if c[0] == c[1]))
-print(common_prefix)
+        arr1_prefix_set = set()
+        for i in arr1:
+            while i > 0 :
+                arr1_prefix_set.add(i)
+                i = i//10
+        arr2_prefix_set = set()
+        for i in arr2:
+            while i > 0 :
+                arr2_prefix_set.add(i)
+                i = i//10
+        intersect = arr1_prefix_set & arr2_prefix_set
+        if not intersect:
+            return 0
+        return len(str(max(intersect)))
+
+
