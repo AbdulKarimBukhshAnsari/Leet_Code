@@ -1,21 +1,19 @@
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+    
+        start = 0
+        end = 1
         max_len = 0
-        current_string = ""
-        for i in s:
-            if i not in current_string:
-                current_string+=i
+        while end<= len(s):
+            if all(s[start:end].count(x)<2  for x in s[start:end]) == True:
+                end+=1
+                
             else:
-                if len(current_string)>max_len:
-                    max_len = len(current_string)
-                current_string = ""
-                current_string+=i
-        if len(current_string)>max_len:
-            return len(current_string)
+                max_len = max(max_len,len(s[start:end-1]))
+                start+=1
+        max_len = max(max_len,len(s[start:end-1]))
+
         return max_len
-obj = Solution()
-print(obj.lengthOfLongestSubstring("pwwkew"))
+            
+
+#yeepee solved after 2 month xd
