@@ -1,27 +1,17 @@
-
-spells = [3,1,2]
-potions = [1,2,3,4,5]
-success = 7
-result = []
-potions.sort()
-for i in range(len(spells)):
-    if potions[len(potions)-1]*spells[i] <success:
-        result.append(0)
-        continue
-    start = 0
-    end = len(potions)
-    mid=(start+end)//2
-    while(start<end):
-        if mid==0 or mid == len(potions) :
-            break
-        if potions[mid]*spells[i]>success or potions[mid]*spells[i] == success:
-            end = mid-1
-        else:
-            start = mid+1
-
-        mid = (start+end)//2
-    if potions[mid]*spells[i] <success:
-        mid+=1
-    result.append(len(potions[mid:]))
-
-print(result)
+class Solution:
+    def successfulPairs(self, spells: list[int], potions: list[int], success: int) -> list[int]:
+        result = []
+        potions.sort()
+        for i in spells:
+            start ,end , temp_result = 0,len(potions)-1,len(potions)
+            #we took the temp_result == 0 so that if there is no success value then we can easily append the 0
+            while start<=end:
+                mid = (start+end)//2
+                if i*potions[mid]>=success:
+                    end = mid-1
+                    temp_result = mid
+                    #save the least true result so if there is no true result then we can return least 
+                else:
+                    start=mid+1
+            result.append(len(potions)-temp_result) # It will let us know the right side element which all the satisfied
+        return result
